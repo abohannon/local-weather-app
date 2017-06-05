@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // get user's current latitude and longitude coordinates
-  $.getJSON("http://ip-api.com/json", function(json){
+  $.getJSON("https://crossorigin.me/http://ip-api.com/json", function(json){
 
     // assign user's current latitude and longitude coordinates to variables
     var currentLat = json.lat,
@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(".coords").html("lat: " + currentLat + ", lon:" + currentLon);
 
     // pull local weather from openweathermap.org JSON API using user's current coordinates
-    var localWeather = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+currentLat+"&lon="+currentLon+"&appid=feb658ff746b02de15d572298112ef26", function(local){
+    var localWeather = $.getJSON("https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat="+currentLat+"&lon="+currentLon+"&appid=feb658ff746b02de15d572298112ef26", function(local){
 
       var currentCity = local.name,
           currentF = local.main.temp * (9/5)-459.67,
