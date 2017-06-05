@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS -->
+  <!-- Boostrap v4 alpha -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- End Styles -->
+  <title>My Local Weather App</title>
+</head>
+
+<body>
+  <div class="container.fluid">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3 weather-display shadow">
+
+        <div class="row top d-flex align-items-center">
+          <div class="col-1">
+            <span class="icon"><i class="fa fa-umbrella fa-3x" aria-hidden="true"></i></span>
+          </div>
+          <div class="col-9 offset-1 text-right top-right">
+              <span class="title d-block">Location</span>
+              <span class="accent d-block"><i class="fa fa-calendar d-inline" aria-hidden="true"></i><span class="date">Sunday, June 4th</span></span>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <span class="temp"><span id="temp-num">54</span>&deg;</span>
+        </div>
+
+        <div class="row msg d-block text-center">
+          <span class="temp-msg d-block">Looks like <span class="accent d- block weather-desc">...</span>.</span>
+        </div>
+
+        <div class="row bottom d-flex align-items-center">
+          <div class="col-9 divider-right">
+            <a href="https://www.wunderground.com/"><span class="details"><i class="fa fa-search-plus" aria-hidden="true"></i>More Details</span></a>
+          </div>
+          <div class="col-1 offset-1">
+            <span class="temp-scale-f cursor">F&deg;</span>
+            <span class="temp-scale-c cursor hide">C&deg;</span>
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <footer></footer>
+
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
