@@ -39,7 +39,6 @@ $(document).ready(function() {
       $(".title").html(currentCity);
       $("#temp-num").html(currentF.toFixed(0));
       $(".weather-desc").html(currentDesc);
-      // $(".icon").html("<img src="+currentIco+">");
       $(".date").html(date);
 
       // backgrounds & icons
@@ -49,7 +48,7 @@ $(document).ready(function() {
       } if(currentId === "741" ){
         $("body").css("background", "url(images/fog.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-fog");
-      } if(currentId > "499" && currentId < "502" ){
+      } if(currentId > "300" && currentId < "502" ){
         $("body").css("background", "url(images/lightrain.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-showers");
       } if(currentId >= "502" && currentId <= "531" ){
@@ -70,7 +69,7 @@ $(document).ready(function() {
       } if(currentId > "599" && currentId <= "622"){
         $("body").css("background", "url(images/snow.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-snow");
-      } 
+      }
 
 
       // Temp scale toggle
