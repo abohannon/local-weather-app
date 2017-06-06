@@ -18,18 +18,10 @@ a, a:active, a:hover {
 
 
 .weather-display {
-  /*background-color: rgba(52,133,186, 1);*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3485ba+0,5494c9+100,207cca+100,2989d8+100 */
-  background: rgb(52, 133, 186);
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba(52, 133, 186, 1) 0%, rgba(84, 148, 201, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(41, 137, 216, 1) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, rgba(52, 133, 186, 1) 0%, rgba(84, 148, 201, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(41, 137, 216, 1) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba(52, 133, 186, 1) 0%, rgba(84, 148, 201, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(41, 137, 216, 1) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3485ba', endColorstr='#2989d8', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
+  background: rgba(20, 30, 48, .5);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, rgba(36, 59, 85, .5), rgba(20, 30, 48, .5));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, rgba(36, 59, 85, .5), rgba(20, 30, 48, .5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   margin-top: 4rem;
   padding: 2rem 3rem 2rem 3rem;
   border-radius:6px;
@@ -51,17 +43,20 @@ a, a:active, a:hover {
 
 .title {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
-.fa-umbrella {
-  color: white;
-  margin-right: 1rem;
+.icon {
+  font-size:3rem;
 }
 
 .fa-calendar {
-  margin-right: .5rem;
+  margin-right: .3rem;
+}
+
+.date {
+  font-size: .7rem;
 }
 
 .fa-search-plus {
@@ -69,7 +64,7 @@ a, a:active, a:hover {
 }
 
 .temp {
-  font-size: 7rem;
+  font-size: 5rem;
   color:white;
   font-weight: 800;
   margin-left: auto;
@@ -87,19 +82,19 @@ a, a:active, a:hover {
   margin-left: auto;
   margin-right:auto;
   margin-bottom:3rem;
-  font-size:2rem;
+  font-size:1.5rem;
   font-weight:300;
 }
 
 .temp-scale-f {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-left: auto;
   margin-right: auto;
 }
 
 .temp-scale-c {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-left: auto;
   margin-right: auto;
@@ -114,7 +109,7 @@ a, a:active, a:hover {
 }
 
 .details {
-  font-size:1.5rem;
+  font-size:1rem;
   font-weight: 400;
 }
 
