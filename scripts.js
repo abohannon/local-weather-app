@@ -42,34 +42,37 @@ $(document).ready(function() {
       $(".date").html(date);
 
       // backgrounds & icons
-      if(currentId > "700" && currentId < "722" ){
-        $("body").css("background", "url(images/haze.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-day-haze");
-      } if(currentId === "741" ){
-        $("body").css("background", "url(images/fog.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-fog");
-      } if(currentId > "300" && currentId < "502" ){
-        $("body").css("background", "url(images/lightrain.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-showers");
-      } if(currentId >= "502" && currentId <= "531" ){
-        $("body").css("background", "url(images/heavyrain.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-rain");
-      } if(currentId === "800"){
+      if(currentId === 800){
         $("body").css("background", "url(images/sunny.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-day-sunny");
-      } if(currentId > "800" && currentId <= "802"){
-        $("body").css("background", "url(images/scatteredclouds.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-day-cloudy");
-      } if(currentId > "802" && currentId <= "804"){
-        $("body").css("background", "url(images/cloudy.jpg) no-repeat center center fixed");
-        $(".icon").addClass("wi wi-cloudy");
-      } if(currentId > "200" && currentId <= "232"){
+      }
+      if(currentId >= 200 && currentId <= 232){
         $("body").css("background", "url(images/thunderstorm.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-thunderstorm");
-      } if(currentId > "599" && currentId <= "622"){
+      }
+      if(currentId >= 300 && currentId <= 531){
+        $("body").css("background", "url(images/heavyrain.jpg) no-repeat center center fixed");
+        $(".icon").addClass("wi wi-rain");
+      }
+      if(currentId >= 600 && currentId <= 622){
         $("body").css("background", "url(images/snow.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-snow");
       }
+      if(currentId >= 701 && currentId <= 741){
+        $("body").css("background", "url(images/fog.jpg) no-repeat center center fixed");
+        $(".icon").addClass("wi wi-fog");
+      }
+      if(currentId >= 801 && currentId <= 802){
+        $("body").css("background", "url(images/scatteredclouds.jpg) no-repeat center center fixed");
+        $(".icon").addClass("wi wi-day-cloudy");
+      }
+      if(currentId >= 803 && currentId <= 804){
+        $("body").css("background", "url(images/cloudy.jpg) no-repeat center center fixed");
+        $(".icon").addClass("wi wi-cloudy");
+      }
+
+
+
 
 
       // Temp scale toggle
