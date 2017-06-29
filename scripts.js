@@ -39,6 +39,7 @@ $(document).ready(function() {
       $(".title").html(currentCity);
       $("#temp-num").html(currentF.toFixed(0));
       $(".weather-desc").html(currentDesc);
+
       $(".date").html(date);
 
       // backgrounds & icons
@@ -70,9 +71,10 @@ $(document).ready(function() {
         $("body").css("background", "url(images/cloudy.jpg) no-repeat center center fixed");
         $(".icon").addClass("wi wi-cloudy");
       }
+      // $(".icon").html("<img src="+currentIco+">");
+      $(".date").html(date);
 
-
-
+      
 
 
       // Temp scale toggle
