@@ -1,10 +1,20 @@
+/* global Skycons:true */
 const IP_URL = 'https://ipapi.co/json/'
 
 class WeatherApp {
   constructor () {
-    this.tempEl = document.querySelector('.container__temp')
-    this.imageEl = document.querySelector('.container__image')
-    this.cityEl = document.querySelector('.container__city')
+    this.tempEl = document.querySelector('.app__primary__top__temp')
+    this.imageEl = document.querySelector('.app__primary__icon')
+    this.cityEl = document.querySelector('.app__primary__top__city')
+    this.secondaryTempOne = document.querySelector('.app__secondary__temp--one')
+    this.secondaryTempTwo = document.querySelector('.app__secondary__temp--two')
+    this.secondaryTempThree = document.querySelector('.app__secondary__temp--three')
+    this.secondarySummaryOne = document.querySelector('.app__secondary__summary--one')
+    this.secondarySummaryTwo = document.querySelector('.app__secondary__summary--two')
+    this.secondarySummaryThree = document.querySelector('.app__secondary__summary--three')
+    this.secondaryIconOne = document.querySelector('.app__secondary__icon--one')
+    this.secondaryIconTwo = document.querySelector('.app__secondary__icon--two')
+    this.secondaryIconThree = document.querySelector('.app__secondary__icon--three')
     this.getUserData = this.getUserData.bind(this)
     this.getWeather = this.getWeather.bind(this)
   }
@@ -44,11 +54,31 @@ class WeatherApp {
   // render the data
   renderWeatherData (data) {
     console.log('inside render', data)
+
     const {temperature, summary} = data.weatherData.currently
+    const {currently, daily} = data.weatherData
     const {city} = data.userData
+
     this.tempEl.innerHTML = `<span>${temperature}</span>`
-    this.imageEl.innerHTML = `<span>${summary}</span>`
     this.cityEl.innerHTML = `<span>${city}</span>`
+    // temp
+    this.secondaryTempOne.innerHTML = `${daily.data[0].temperatureHigh}`
+    this.secondaryTempTwo.innerHTML = `${daily.data[1].temperatureHigh}`
+    this.secondaryTempThree.innerHTML = `${daily.data[2].temperatureHigh}`
+    // summary
+    this.secondarySummaryOne.innerHTML = `${daily.data[0].summary}`
+    this.secondarySummaryTwo.innerHTML = `${daily.data[1].summary}`
+    this.secondarySummaryThree.innerHTML = `${daily.data[2].summary}`
+
+    // icons
+    const icons = new Skycons({'color': 'white'})
+    icons.play()
+    console.log(icons)
+
+    icons.add('today', currently.icon)
+    icons.add('tomorrow', daily.data[0].icon)
+    icons.add('twoDays', daily.data[1].icon)
+    icons.add('threeDays', daily.data[2].icon)
   }
   // initialize the app by kicking off the first fetch for user data
   initialize () {

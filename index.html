@@ -19,27 +19,38 @@
 
 <body>
 
-  <div class="container">
-    <div class="container__main">
-      <div class="container__top">
-        <div class="container__temp">
+  <div class="app">
+    <div class="app__primary bg-blue">
+      <div class="app__primary__top">
+        <div class="app__primary__top__temp">
 
         </div>
-        <div class="container__city">
+        <div class="app__primary__top__city">
 
         </div>
       </div>
-      <div class="container__image">
-
-      </div>
+      <canvas id="today" class="app__primary__icon"></canvas>
     </div>
-    <div class="container__secondary"></div>
-    <div class="container__secondary"></div>
-    <div class="container__secondary"></div>
+    <div class="app__secondary bg-amber">
+      <div class="app__secondary__temp--one"></div>
+      <canvas id="tomorrow" class="app__secondary__icon--one icon--secondary"></canvas>
+      <div class="app__secondary__summary--one"></div>
+    </div>
+    <div class="app__secondary bg-pink">
+      <div class="app__secondary__temp--two"></div>
+      <canvas id="twoDays" class="app__secondary__icon--two icon--secondary"></canvas>
+      <div class="app__secondary__summary--two"></div>
+    </div>
+    <div class="app__secondary bg-orange">
+      <div class="app__secondary__temp--three"></div>
+      <canvas id="threeDays" class="app__secondary__icon--three icon--secondary"></canvas>
+      <div class="app__secondary__summary--three"></div>
+    </div>
   </div>
 
 
-  <footer></footer>
+  <footer>made by <a href="https://twitter.com/abohannon" target="_blank">adam</a></footer>
+  <script src="skycons.js"></script>
   <script src="script.js"></script>
 </body>
 
