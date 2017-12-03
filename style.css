@@ -2,6 +2,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .bg-blue {
@@ -16,8 +18,8 @@ body {
   background-color: #FF5722;
 }
 
-.bg-amber {
-  background-color: #FFCA28;
+.bg-teal {
+  background-color: #4DB6AC;
 }
 
 .app {
@@ -34,46 +36,71 @@ body {
 .app__primary {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   max-width: inherit;
   height: 300px;
-  padding: 8px;
+  padding: 24px;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.32);
 }
 
 .app__primary__top {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .app__primary__top__city {
-  width: 64px;
-  height: 64px;
+  font-size: 28px;
+  text-align: right;
+  height: auto;
 }
 
 .app__primary__top__temp {
+  display: flex;
+  flex-direction: column;
   width: 200px;
-  height: 104px;
+  height: auto;
+}
+
+.current-temp {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.highlow-temp {
+  align-items: center;
+}
+
+.low-temp {
+  font-size: 12px;
 }
 
 .app__primary__icon {
-  flex: 1;
+  justify-content: center;
+  margin: auto;
+  width: 270px;
+  height: auto;
+}
+
+.app__primary__summary {
+  margin-top: 16px;
+  text-align: center;
 }
 
 .app__secondary {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: [first] 20% [second] 25% [third] 55%;
   align-items: center;
-  justify-content: space-between;
-  height: 70px;
+  justify-items: center;
+  text-align: center;
+  height: auto;
   margin-top: 16px;
-  padding: 8px;
+  padding: 24px;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.32);
 }
 
 .icon--secondary {
-  width: 100px;
+  width: 100%;
 }
 
 a {
