@@ -8,9 +8,9 @@ class WeatherApp {
     this.imageEl = document.querySelector('.app__primary__icon')
     this.cityEl = document.querySelector('.app__primary__top__city')
     this.summary = document.querySelector('.app__primary__summary')
-    this.secondaryTempOne = document.querySelector('.app__secondary__temp--one')
-    this.secondaryTempTwo = document.querySelector('.app__secondary__temp--two')
-    this.secondaryTempThree = document.querySelector('.app__secondary__temp--three')
+    this.secondaryTempOne = document.querySelector('.temp__one')
+    this.secondaryTempTwo = document.querySelector('.temp__two')
+    this.secondaryTempThree = document.querySelector('.temp__three')
     this.secondarySummaryOne = document.querySelector('.app__secondary__summary--one')
     this.secondarySummaryTwo = document.querySelector('.app__secondary__summary--two')
     this.secondarySummaryThree = document.querySelector('.app__secondary__summary--three')
@@ -82,6 +82,10 @@ class WeatherApp {
     let lowToday
     let highOneDay
     let lowOneDay
+    let highTwoDay
+    let lowTwoDay
+    let highThreeDay
+    let lowThreeDay
 
     if (!this.state.celsius) {
       tempToday = `${temperature.toFixed(1)}&deg;F`
@@ -90,6 +94,12 @@ class WeatherApp {
 
       highOneDay = daily.data[1].temperatureHigh.toFixed(1)
       lowOneDay = daily.data[1].temperatureLow.toFixed(1)
+
+      highTwoDay = daily.data[2].temperatureHigh.toFixed(1)
+      lowTwoDay = daily.data[2].temperatureLow.toFixed(1)
+
+      highThreeDay = daily.data[3].temperatureHigh.toFixed(1)
+      lowThreeDay = daily.data[3].temperatureLow.toFixed(1)
     } else if (this.state.celsius) {
       tempToday = this.convertToCelsius(temperature.toFixed(1)) + '&deg;C'
       highToday = this.convertToCelsius(daily.data[0].temperatureHigh.toFixed(1))
@@ -97,16 +107,22 @@ class WeatherApp {
 
       highOneDay = this.convertToCelsius(daily.data[1].temperatureHigh.toFixed(1))
       lowOneDay = this.convertToCelsius(daily.data[1].temperatureLow.toFixed(1))
+
+      highTwoDay = this.convertToCelsius(daily.data[2].temperatureHigh.toFixed(1))
+      lowTwoDay = this.convertToCelsius(daily.data[2].temperatureLow.toFixed(1))
+
+      highThreeDay = this.convertToCelsius(daily.data[3].temperatureHigh.toFixed(1))
+      lowThreeDay = this.convertToCelsius(daily.data[3].temperatureLow.toFixed(1))
     }
 
     this.cityEl.innerHTML = `<span>${city}</span>`
 
     // temp
     this.currentTemp.innerHTML = tempToday
-    this.currentHighLow.innerHTML = `${highToday} <span class="low-temp">/ ${lowToday}</span>`
-    this.secondaryTempOne.innerHTML = `${highOneDay} <span class="low-temp">/ ${lowOneDay}</span>`
-    this.secondaryTempTwo.innerHTML = `${daily.data[2].temperatureHigh.toFixed(1)} <span class="low-temp">/ ${daily.data[2].temperatureLow.toFixed(1)}</span>`
-    this.secondaryTempThree.innerHTML = `${daily.data[3].temperatureHigh.toFixed(1)} <span class="low-temp">/ ${daily.data[3].temperatureLow.toFixed(1)}</span>`
+    this.currentHighLow.innerHTML = `Hi ${highToday} <span class="low-temp">Lo ${lowToday}</span>`
+    this.secondaryTempOne.innerHTML = `Hi ${highOneDay} <span class="low-temp">Lo ${lowOneDay}</span>`
+    this.secondaryTempTwo.innerHTML = `Hi ${highTwoDay} <span class="low-temp">Lo ${lowTwoDay}</span>`
+    this.secondaryTempThree.innerHTML = `Hi ${highThreeDay} <span class="low-temp">Lo ${lowThreeDay}</span>`
 
     // summary
     this.summary.innerHTML = `${currently.summary}`
@@ -120,9 +136,9 @@ class WeatherApp {
     console.log(icons)
 
     icons.add('today', currently.icon)
-    icons.add('tomorrow', daily.data[0].icon)
-    icons.add('twoDays', daily.data[1].icon)
-    icons.add('threeDays', daily.data[2].icon)
+    icons.add('tomorrow', daily.data[1].icon)
+    icons.add('twoDays', daily.data[2].icon)
+    icons.add('threeDays', daily.data[3].icon)
   }
   // initialize the app by kicking off the first fetch for user data
   initialize () {
